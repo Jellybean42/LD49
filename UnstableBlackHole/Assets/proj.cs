@@ -14,15 +14,19 @@ public class proj : MonoBehaviour
         gm = FindObjectOfType<gamemanagerscript>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, transform.position + transform.up, 0.05f);
         lifeSpan -= Time.deltaTime;
-        if(lifeSpan < 0)
+        if (lifeSpan < 0)
         {
             Destroy(gameObject);
         }
+    }
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, transform.position + transform.up, 0.5f);
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

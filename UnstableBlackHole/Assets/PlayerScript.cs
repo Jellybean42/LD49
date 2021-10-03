@@ -21,6 +21,7 @@ public class PlayerScript : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, transform.position + transform.up, 0.05f);
         if (Input.GetAxis("Vertical") > 0)
         {
+            Debug.Log("called");
             transform.position = Vector2.MoveTowards(transform.position, transform.position+transform.up, 0.2f);
         }
 
